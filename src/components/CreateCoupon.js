@@ -40,8 +40,7 @@ export default function CreateCoupon() {
     open: false
   });
   const [tokens] = useState([
-    { name: "DAI", address: "0x5A01Ea01Ba9A8DC2B066714A65E61a78838B1b9e" },
-    { name: "USDC", address: "0x65471bdCDb3720Dc07B914756884b50a2b4395fb" }
+    { name: "DAI", address: "0xff795577d9ac8bd7d90ee22b6c1703490b6512fd" }
   ]);
 
   const ipfs = ipfsClient({

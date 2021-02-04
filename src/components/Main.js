@@ -5,7 +5,7 @@ import { time } from "../web3/time";
 import Loading from "./Loading";
 
 export default function Main() {
-  const dai = "0x5A01Ea01Ba9A8DC2B066714A65E61a78838B1b9e"
+  const dai = "0xff795577d9ac8bd7d90ee22b6c1703490b6512fd"
 
   const [listCoupons, setCoupons] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -71,9 +71,7 @@ export default function Main() {
         <Link
           key={count}
           style={{ textDecoration: "none", color: "black" }}
-          to={`/view/${coupon.couponAddress}/${coupon.couponTokenSymbol}/${coupon.ticketBuyToken === dai ?
-            "DAI" :
-            "USDC"}`}
+          to={`/view/${coupon.couponAddress}/${coupon.couponTokenSymbol}/DAI`}
         >
           <Card.Header style={{ marginBottom: "5px" }}>
             <Image src={coupon.baseTokenURI} width="50px"></Image>
@@ -83,9 +81,7 @@ export default function Main() {
           <Card.Body>
             <div style={{ marginBottom: "10px" }}>
               Ticket Price: {coupon.ticketPrice}
-              <span> {coupon.ticketBuyToken === dai ?
-                "DAI" :
-                "USDC"}
+              <span> {"DAI"}
               </span>
             </div>
             <div style={{ marginBottom: "10px" }}>

@@ -41,6 +41,10 @@ contract RandomNumberConsumer is VRFConsumerBase {
     function fulfillRandomness(bytes32 requestId, uint256 randomness) internal override {
         randomResult = randomness;
     }
+
+    function getRandomResult() public view returns(uint256) {
+        return randomResult;
+    }
     
     /**
      * Withdraw LINK from this contract

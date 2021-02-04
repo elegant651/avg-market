@@ -22,7 +22,7 @@ function executeOperation(
     uint256 _fee,
     bytes calldata _params
 ) external override {
-    require(_amount &lt;= getBalanceInternal(address(this), _reserve), "Invalid balance, was the flashLoan successful?");
+    require(_amount <= getBalanceInternal(address(this), _reserve), "Invalid balance, was the flashLoan successful?");
 
     // Your logic goes here.
 

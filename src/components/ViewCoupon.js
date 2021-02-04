@@ -21,8 +21,7 @@ import Claim from "./view_coupon/Claim";
 
 export default function ViewCoupon() {
   let routes;
-  const DAI = "0x5A01Ea01Ba9A8DC2B066714A65E61a78838B1b9e";
-  const USDC = "0x65471bdCDb3720Dc07B914756884b50a2b4395fb";
+  const DAI = "0xff795577d9ac8bd7d90ee22b6c1703490b6512fd";
   const { couponAddress, nftToken, buyToken } = useParams();
   const [loading, setLoading] = useState(true);
   const [processing, setProcessing] = useState(false);
@@ -96,7 +95,7 @@ export default function ViewCoupon() {
 
         const tokenBaseURI = await contractInstance
           .methods.baseURI().call();
-            
+
 
         let couponResult = 0, couponWinnerAddr = "";
         if (Number(distCount) === Number(totalTicket) - 1 &&
@@ -175,7 +174,7 @@ export default function ViewCoupon() {
 
         const erc20 = new window.web3.eth.Contract(
           erc20Abi.default,
-          buyToken === "DAI" ? DAI : USDC,
+          DAI,
           { from: window.userAddress }
         );
 
@@ -216,9 +215,7 @@ export default function ViewCoupon() {
   };
 
   const getTokenSymbol = () => {
-    return buyToken === "DAI" ?
-      "DAI" :
-      "USDC";
+    return "DAI";
   };
 
   useEffect(() => {
@@ -337,7 +334,7 @@ export default function ViewCoupon() {
                         Token Already Closed
                       </div>
                       <div className="auction-info-message">
-                        Result: {state.tokenResult}
+                        Result: {state.couponResult}
                       </div>
                     </div>
                     : null
@@ -381,7 +378,7 @@ export default function ViewCoupon() {
                     couponAddress={couponAddress}
                     contractInstance={contractInstance}
                     erc20Instance={erc20Instance}
-                    buyToken={buyToken === "DAI" ? "DAI" : "USDC"}
+                    buyToken={"DAI"}
                     availableBalance={state.erc20Balance}
                     balanceNeeded={state.ticketPrice}
                     callback={fetchContractData}

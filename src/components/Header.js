@@ -35,10 +35,13 @@ export default function Header() {
           <Nav.Link href="#token-faucet">Faucet</Nav.Link>
         </Nav>
         <Nav>
-          <Button
-            onClick={handleConnectMetamask}
-            >Connect Metamask
-          </Button>
+          {window.userAddress ?
+            <div>Address : {window.userAddress}</div> :
+            <Button
+              onClick={handleConnectMetamask}
+              >Connect Metamask
+            </Button>
+          }
         </Nav>
       </Navbar>
 
