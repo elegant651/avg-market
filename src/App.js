@@ -13,6 +13,7 @@ import CreateCoupon from './components/CreateCoupon';
 import Main from './components/Main';
 import ViewCoupon from './components/ViewCoupon';
 import Faucet from './components/Faucet';
+import FlashSwap from './components/FlashSwap';
 
 
 function App() {
@@ -29,6 +30,9 @@ function App() {
       </Route>
       <Route path="/token-faucet" exact>
         <Faucet />
+      </Route>
+      <Route path="/flash-swap" exact>
+        <FlashSwap />
       </Route>
       <Redirect to="/" />
     </Switch>

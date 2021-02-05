@@ -28,7 +28,7 @@ export default function DisplayTickets({
               <span>{ticket.ticketNumber}</span>
             </Col>
             <Col>
-              <u>Still Valid</u>
+              <u>isWin</u>
               <span> : </span>
               {ticket.isValid ?
                     'yes' :

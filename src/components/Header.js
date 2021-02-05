@@ -33,6 +33,7 @@ export default function Header() {
         <Nav className="mr-auto">
           <Nav.Link href="#create-coupon">Create Coupon</Nav.Link>
           <Nav.Link href="#token-faucet">Faucet</Nav.Link>
+          <Nav.Link href="#flash-swap">Flash Swap</Nav.Link>
         </Nav>
         <Nav>
           {window.userAddress ?

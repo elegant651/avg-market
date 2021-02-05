@@ -292,7 +292,7 @@ export default function ViewCoupon() {
 
                 <Row style={{ paddingBottom: "20px" }}>
                   <Col>
-                    <u>Distribution Complete</u>
+                    <u>Distribution</u>
                     <span> :</span>
                     <span className="float-right">
                       {state.distCount}
@@ -334,7 +334,7 @@ export default function ViewCoupon() {
                         Token Already Closed
                       </div>
                       <div className="auction-info-message">
-                        Result: {state.couponResult}
+                        Win Number: {state.couponResult}
                       </div>
                     </div>
                     : null

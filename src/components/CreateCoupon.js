@@ -191,6 +191,24 @@ export default function CreateCoupon() {
 
               <Row>
                 <Col className="text-header">
+                  NFT Token Image:
+                </Col>
+                <Col style={{ paddingLeft: "0px" }}>
+                  <Form.Control
+                    className="mb-4"
+                    type="file"
+                    onChange={(event) => setAddCouponState({
+                      ...addCouponState,
+                      image: event.target.files[0]
+                    })}
+                    style={{ width: "80%" }}
+                    required
+                  />
+                </Col>
+              </Row>
+
+              <Row>
+                <Col className="text-header">
                   Ticket Price:
                 </Col>
                 <Col style={{ paddingLeft: "0px" }}>
@@ -212,7 +230,7 @@ export default function CreateCoupon() {
 
               <Row>
                 <Col className="text-header">
-                  Every Distribution Interval:
+                  Distribution Interval:
                 </Col>
                 <Col style={{ paddingLeft: "0px" }}>
                   <Form.Control
@@ -233,7 +251,7 @@ export default function CreateCoupon() {
 
               <Row>
                 <Col className="text-header">
-                  Buy Duration:
+                  Duration for buy:
                 </Col>
                 <Col style={{ paddingLeft: "0px" }}>
                   <Form.Control
@@ -282,25 +300,7 @@ export default function CreateCoupon() {
                     ))}
                   </DropdownButton>
                 </Col>
-              </Row>
-
-              <Row>
-                <Col className="text-header">
-                  NFT Token Image:
-                </Col>
-                <Col style={{ paddingLeft: "0px" }}>
-                  <Form.Control
-                    className="mb-4"
-                    type="file"
-                    onChange={(event) => setAddCouponState({
-                      ...addCouponState,
-                      image: event.target.files[0]
-                    })}
-                    style={{ width: "80%" }}
-                    required
-                  />
-                </Col>
-              </Row>
+              </Row>              
 
               {addCouponState.image ?
                 <Row>
