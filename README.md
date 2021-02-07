@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# AVG Market
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The user acquires an NFT coupon with a unique ticket number by purchasing ticket. A random ticket is drawn at a fixed time interval and eliminates the number from the pool. If the ticket number is the same as the lottery number, the user can get the coupon. Users can swap coupon to dai with Aave Flash loan easily. 
+
+Smart contract: We use Kovan testnet to deploy smart contracts. \
+- Coupon.sol : ERC-721 based NFT contract. it includes buyTicket, distribution, claimPrize, claimReturn.
+- Faucet.sol : ERC-20 based Faucet contract
+- RandomNumberConsumer.sol : Use chainlink VRF for generate random number
+- AVGFlashLoan.sol : Aave flash loan, which includes flashloan =>swap=>deposit=>borrow=>payback flashloan process. At first, loans as many dai as the value of the coupon. then swap another coupon (less current value) with that dai (dex - uniswap or 1inch). After sell to existing coupon then repay the amount of dai to aave. (...ing)
+Frontend: React, web3 library, IPFS, bootstrap\
+
+
 
 ## Available Scripts
 

@@ -106,7 +106,7 @@ contract AVGFlashLoan is IAVGFlashLoan, IFlashLoanReceiver {
         uint256[] memory modes = new uint256[](1);
         modes[0] = 0;
 
-        // 1. Borrow `_amountBorrowed` of `_asset`
+        // Borrow `_amountBorrowed` of `_asset`
         lendingPool.flashLoan(
             address(this), // receiverAddress
             assets,
